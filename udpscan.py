@@ -6,10 +6,7 @@ logging.getLogger("scapy.runtime").setLevel(logging.ERROR)
 from datetime import datetime
 from scapy.all import *
 
-# dst_ip = “10.0.0.1”
-# src_port = RandShort()
-# dst_port=53
-# dst_timeout=10
+
 
 def check_host(ip, timeout=1):
 	conf.verb = 0
@@ -43,7 +40,7 @@ def udpscan(ip, min_port, max_port, timeout=1):
     if (int(min_port) >= 0 and int(max_port) >=0 and int(max_port) >= int(min_port)):
         ports = range(int(min_port), int(max_port)+1)
         start_clock = datetime.now()
-        print("Stealth Scan started at ", start_clock)
+        print("UDP scan started at ", start_clock)
         if (check_host(target, timeout)):
             for port in ports:
                 status = probe_port(target, port, timeout)
