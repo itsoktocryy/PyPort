@@ -55,16 +55,15 @@ def stealthportscan(target, min_port=0, max_port=100, timeout=1):
 			print("Stealth Scan Finished\n", open_ports, "Ports Open on", int(max_port) - int(min_port))
 			print("Scan Duration : ", total_time)
 
-
 if __name__ == '__main__':
 	match len(sys.argv):
-		case 1:
+		case 1: #Scan localhost
 			stealthportscan("127.0.0.1")
-		case 2:
+		case 2: #Scan custom IP (Default port from 0 to 100, default timeout = 1sec)
 			stealthportscan(sys.argv[1])
-		case 4:
+		case 4: #Scan custom IP and set min_port and max_port
 			stealthportscan(sys.argv[1], int(sys.argv[2]), int(sys.argv[3]))
-		case 5:
+		case 5: #Scan custom IP and set min_port , max_port and timeout
 			stealthportscan(sys.argv[1], int(sys.argv[2]), int(sys.argv[3]), float(sys.argv[4]))
 
 
