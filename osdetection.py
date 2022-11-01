@@ -47,7 +47,7 @@ def osdetection(target, min_port=0, max_port=100, timeout=1):
 if __name__ == '__main__':
 	match len(sys.argv):
 		case 1: #Scan localhost
-			osdetection("ibizapimp.com")
+			osdetection("IPaddr")
 		case 2: #Scan custom IP (Default port from 0 to 100, default timeout = 1sec)
 			osdetection(sys.argv[1])
 		case 4: #Scan custom IP and set min_port and max_port
