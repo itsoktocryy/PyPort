@@ -26,6 +26,8 @@ def probe_port(target, port, timeout=1):
 			return False
 		elif resp.haslayer(UDP):
 			return True
+		elif (resp.haslayer(UDP).flags==0x14):
+			return False
 	except Exception as e:
 		pass
 
